@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8vq375488qnp"]
+
+[ext_resource type="Script" path="res://Scenes/Goblin/GoblinBomberT1.gd" id="1_6k4ap"]
+[ext_resource type="Texture2D" uid="uid://b6r20aemrw6mh" path="res://Assets/Goblin/GoblinBombeT1.png" id="2_p55ux"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lf86y"]
+radius = 200.0
+
+[node name="GoblinBomberT1" type="Node2D"]
+script = ExtResource("1_6k4ap")
+
+[node name="Goblin" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.047, 1.836)
+texture = ExtResource("2_p55ux")
+
+[node name="Marker2D" type="Marker2D" parent="Goblin"]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_lf86y")

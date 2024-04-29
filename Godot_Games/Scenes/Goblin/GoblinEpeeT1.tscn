@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://blf1ic05mlmnt"]
+
+[ext_resource type="Script" path="res://Scenes/Goblin/GoblinEpeeT1.gd" id="1_ulwh2"]
+[ext_resource type="Texture2D" uid="uid://kkatks3jw502" path="res://Assets/Goblin/GoblinEpeeT1.png" id="2_jncwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yyhob"]
+radius = 200.0
+
+[node name="GoblinEpeeT1" type="Node2D"]
+script = ExtResource("1_ulwh2")
+
+[node name="Goblin" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.047, 1.836)
+texture = ExtResource("2_jncwg")
+
+[node name="Marker2D" type="Marker2D" parent="Goblin"]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_yyhob")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://um3qefobu11v"]
+
+[ext_resource type="Script" path="res://Scenes/Goblin/GoblinArcherT1.gd" id="1_i635c"]
+[ext_resource type="Texture2D" uid="uid://uc7fk7aiwn4t" path="res://Assets/Goblin/GoblinArrowT1.png" id="2_x5jd0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23ex7"]
+radius = 200.0
+
+[node name="GoblinArrowT1" type="Node2D"]
+script = ExtResource("1_i635c")
+
+[node name="Goblin" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(2.04688, 1.83594)
+texture = ExtResource("2_x5jd0")
+
+[node name="Shoot" type="Marker2D" parent="Goblin"]
+position = Vector2(14, 8)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_23ex7")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

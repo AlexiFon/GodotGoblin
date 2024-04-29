@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx6h3hcd4pcts"]
+
+[ext_resource type="Script" path="res://Scenes/Goblin/GoblinMageT1.gd" id="1_16b1u"]
+[ext_resource type="Texture2D" uid="uid://dvxb3iw8gavet" path="res://Assets/Goblin/GoblinMageT1.png" id="2_mwj18"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtyqk"]
+radius = 200.0
+
+[node name="GoblinMageT1" type="Node2D"]
+script = ExtResource("1_16b1u")
+
+[node name="Goblin" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.047, 1.836)
+texture = ExtResource("2_mwj18")
+
+[node name="Marker2D" type="Marker2D" parent="Goblin"]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_mtyqk")
